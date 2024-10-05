@@ -27,28 +27,28 @@ class TurtleController(Node):
     def get_distance(self, start_pose, current_pose):
         return math.sqrt((current_pose.x - start_pose.x)**2 + (current_pose.y - start_pose.y)**2)
     
-    # def move(self, distance): #using spin_once
-    #     new_vel=Twist()
+    def move(self, distance): #using spin_once
+        new_vel=Twist()
 
-    #     new_vel.linear.x = 1.0
+        new_vel.linear.x = 1.0
 
-    #     new_vel.angular.z = 0.0
+        new_vel.angular.z = 0.0
 
-    #     self.start_pose = Pose()
-    #     self.start_pose.x = self.pose.x
-    #     self.start_pose.y = self.pose.y
-    #     self.start_pose.theta = self.pose.theta
+        self.start_pose = Pose()
+        self.start_pose.x = self.pose.x
+        self.start_pose.y = self.pose.y
+        self.start_pose.theta = self.pose.theta
 
 
-    #     while self.get_distance(self.start_pose, self.pose) < distance:
-    #         self.pub_.publish(new_vel)
-    #         rclpy.spin_once(self, timeout_sec=0.1)
+        while self.get_distance(self.start_pose, self.pose) < distance:
+            self.pub_.publish(new_vel)
+            rclpy.spin_once(self, timeout_sec=0.1)
 
-    # # Stop the turtle once the distance is covered
-    #     new_vel.linear.x = 0.0
-    #     self.pub_.publish(new_vel)
-    #     self.get_logger().info("Goal Reached!")
-    #     quit()
+    # Stop the turtle once the distance is covered
+        new_vel.linear.x = 0.0
+        self.pub_.publish(new_vel)
+        self.get_logger().info("Goal Reached!")
+        quit()
 
     def move2(self, distance):
 
