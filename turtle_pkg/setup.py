@@ -20,11 +20,11 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [ 
-            "turtle_controller=pkg_py.turtle_controller:main",
-            "draw_circle=pkg_py.draw_circle:main",
-            "pose_node=pkg_py.pose_node:main",
-            "turtle_nav=pkg_py.turtle_nav:main",
-            "turtle_move=pkg_py.turtle_move:main"
+            "turtle_controller=turtle_pkg.turtle_controller:main",
+            "draw_circle=turtle_pkg.draw_circle:main",
+            "pose_node=turtle_pkg.pose_node:main",
+            "turtle_nav=turtle_pkg.turtle_nav:main",
+            "turtle_move=turtle_pkg.turtle_move:main"
         ],
     },
 )
